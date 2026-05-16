@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: #0e0e0e;
+  color: #ffffff;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.screenshots-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.screenshots-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.screenshots-scroll::-webkit-scrollbar-thumb {
+  background: #242424;
+  border-radius: 3px;
+}

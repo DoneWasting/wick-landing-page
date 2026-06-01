@@ -11,23 +11,42 @@ export function CTA() {
         <p className="mt-4 text-[16px] text-[#9A9A9A]">
           Candle Timer for Traders.
         </p>
-        {/* TODO: replace href="#" with real App Store / Play Store URLs before launch */}
+        {/* Badges are disabled until launch. Swap the `comingSoon` props once store URLs exist. */}
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
-          <AppStoreBadge href="#" />
-          <PlayStoreBadge href="#" />
+          <AppStoreBadge href="#" comingSoon />
+          <PlayStoreBadge href="#" comingSoon />
         </div>
+        <p className="mt-5 text-[13px] text-[#6B6B6B]">
+          iOS and Android apps coming soon.
+        </p>
       </div>
     </section>
   );
 }
 
-function AppStoreBadge({ href }: { href: string }) {
+type BadgeProps = { href: string; comingSoon?: boolean };
+
+function ComingSoonRibbon() {
+  return (
+    <span className="absolute -right-2 -top-2 rounded-full bg-[#1FBF7A] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+      Soon
+    </span>
+  );
+}
+
+function AppStoreBadge({ href, comingSoon = false }: BadgeProps) {
   return (
     <a
-      href={href}
+      href={comingSoon ? undefined : href}
       aria-label="Download on the App Store"
-      className="flex h-[56px] items-center gap-2.5 rounded-[10px] border border-white/15 bg-black px-4 transition-transform hover:-translate-y-px hover:border-white/30 active:translate-y-0"
+      aria-disabled={comingSoon}
+      className={`relative flex h-[56px] items-center gap-2.5 rounded-[10px] border border-white/15 bg-black px-4 transition-transform ${
+        comingSoon
+          ? 'cursor-default opacity-60'
+          : 'hover:-translate-y-px hover:border-white/30 active:translate-y-0'
+      }`}
     >
+      {comingSoon && <ComingSoonRibbon />}
       <AppleGlyph />
       <div className="flex flex-col items-start leading-none">
         <span className="text-[10px] font-normal text-white">
@@ -41,13 +60,19 @@ function AppStoreBadge({ href }: { href: string }) {
   );
 }
 
-function PlayStoreBadge({ href }: { href: string }) {
+function PlayStoreBadge({ href, comingSoon = false }: BadgeProps) {
   return (
     <a
-      href={href}
+      href={comingSoon ? undefined : href}
       aria-label="Get it on Google Play"
-      className="flex h-[56px] items-center gap-2.5 rounded-[10px] border border-white/15 bg-black px-4 transition-transform hover:-translate-y-px hover:border-white/30 active:translate-y-0"
+      aria-disabled={comingSoon}
+      className={`relative flex h-[56px] items-center gap-2.5 rounded-[10px] border border-white/15 bg-black px-4 transition-transform ${
+        comingSoon
+          ? 'cursor-default opacity-60'
+          : 'hover:-translate-y-px hover:border-white/30 active:translate-y-0'
+      }`}
     >
+      {comingSoon && <ComingSoonRibbon />}
       <PlayGlyph />
       <div className="flex flex-col items-start leading-none">
         <span className="text-[9px] font-normal uppercase tracking-[0.12em] text-white">
@@ -80,15 +105,27 @@ function PlayGlyph() {
     <svg
       width="22"
       height="24"
-      viewBox="0 0 22 24"
+      viewBox="0 0 512 512"
       fill="none"
       aria-hidden
     >
-      {/* Four-color play triangle approximation of the Google Play mark */}
-      <path d="M2 2 L12 12 L2 12 Z" fill="#00C2FF" />
-      <path d="M2 12 L12 12 L2 22 Z" fill="#00E676" />
-      <path d="M12 12 L20 7.5 L20 12 Z" fill="#FFCD40" />
-      <path d="M12 12 L20 12 L20 16.5 Z" fill="#EA4335" />
+      {/* Official Google Play four-color mark */}
+      <path
+        d="M48 59.49v393a4.33 4.33 0 0 0 7.37 3.07L260 256 55.37 56.42A4.33 4.33 0 0 0 48 59.49z"
+        fill="#00D2FF"
+      />
+      <path
+        d="M345.8 174 89.22 32.64l-.16-.09c-4.42-2.4-8.62 3.58-5 7.06l201.13 201.79z"
+        fill="#00E676"
+      />
+      <path
+        d="M84.08 472.39c-3.64 3.48.56 9.46 5 7.06l.16-.09L345.8 338l-60.61-60.6z"
+        fill="#FF3D00"
+      />
+      <path
+        d="M449.38 231.61 374.55 190.6l-66.43 65.4 66.43 65.4 74.83-41.01c20.83-11.41 20.83-37.37 0-48.78z"
+        fill="#FFEA00"
+      />
     </svg>
   );
 }

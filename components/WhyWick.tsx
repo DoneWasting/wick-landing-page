@@ -2,6 +2,7 @@ import {
   ClockUtcIcon,
   CandleStackIcon,
   WarningBellsIcon,
+  SmartwatchIcon,
 } from './Icons';
 
 const features = [
@@ -13,12 +14,17 @@ const features = [
   {
     Icon: CandleStackIcon,
     title: 'Forex + Crypto, every timeframe.',
-    body: '1m, 5m, 15m, 1h, 4h — pick the candles you actually trade.',
+    body: '1m, 5m, 15m, 1h, 4h. Pick the candles you actually trade.',
   },
   {
     Icon: WarningBellsIcon,
     title: 'Pre-close warnings.',
     body: 'Set 1, 2, 3, 5, or 10 minutes before close. Stack as many as you want per alert.',
+  },
+  {
+    Icon: SmartwatchIcon,
+    title: 'Right on your wrist.',
+    body: 'Alerts also pop up on your Android smartwatch, so you catch every close without reaching for your phone.',
   },
 ];
 
@@ -27,7 +33,7 @@ export function WhyWick() {
     <section className="border-b border-[#242424] py-20 md:py-24">
       <div className="mx-auto max-w-[1100px] px-6">
         <div className="rounded-[14px] border border-[#242424] bg-[#161616] p-8 md:p-12">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:gap-10 lg:grid-cols-4">
             {features.map(({ Icon, title, body }) => (
               <div key={title}>
                 <Icon size={28} color="#7FB0E8" />

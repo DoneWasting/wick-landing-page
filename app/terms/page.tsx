@@ -65,8 +65,8 @@ export default function TermsPage() {
           <Section title="Limitation of liability">
             To the maximum extent permitted by law, Wick and its developers
             are not liable for any direct, indirect, incidental, special,
-            consequential, or exemplary damages — including trading losses,
-            missed opportunities, or financial harm — arising from your use
+            consequential, or exemplary damages, including trading losses,
+            missed opportunities, or financial harm, arising from your use
             of, or inability to use, the app.
           </Section>
 

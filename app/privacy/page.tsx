@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 // TODO: have legal/counsel review this draft before launch. The claims below
 // are written to match the public product copy (offline, no account, no API
-// key). If any of that changes — analytics, crash reporting, cloud sync,
-// telemetry — this page must be updated first.
+// key). If any of that changes (analytics, crash reporting, cloud sync,
+// telemetry), this page must be updated first.
 
 export default function PrivacyPage() {
   return (
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
           </Section>
 
           <Section title="Data stored on your device">
-            The alerts you create — market, timeframe, and pre-close warnings —
+            The alerts you create (market, timeframe, and pre-close warnings)
             are saved in local storage on your device so they persist between
             app launches. This data never leaves your device. Uninstalling
             Wick removes it.

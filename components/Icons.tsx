@@ -171,6 +171,49 @@ export function CandleStackIcon({
   );
 }
 
+export function SmartwatchIcon({
+  size = 28,
+  color = '#7FB0E8',
+  strokeWidth = 1.8,
+  className,
+}: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+      aria-hidden
+    >
+      <rect
+        x="6"
+        y="7"
+        width="12"
+        height="10"
+        rx="3"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9 7l.5-3h5l.5 3M9 17l.5 3h5l.5-3"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 10v2.2l1.6 1"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function WarningBellsIcon({
   size = 28,
   color = '#7FB0E8',

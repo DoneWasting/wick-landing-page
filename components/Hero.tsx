@@ -10,7 +10,7 @@ export function Hero() {
           </h1>
           <p className="mt-5 max-w-[480px] text-[17px] leading-relaxed text-[#9A9A9A] md:text-[18px]">
             Wick fires a local notification at the exact moment your 1m, 5m,
-            15m, 1h, or 4h candle closes — UTC-aligned, offline, no account, no
+            15m, 1h, or 4h candle closes. UTC-aligned, offline, no account, no
             API key needed.
           </p>
           <div className="mt-8 flex items-center gap-5">

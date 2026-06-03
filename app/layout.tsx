@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://wick-landing-page-six.vercel.app'),
   title: 'Wick — Candle Timer for Traders',
   description:
     'Never miss a candle close. UTC-aligned notifications for Forex and Crypto candles, offline and free.',
